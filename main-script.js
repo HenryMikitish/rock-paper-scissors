@@ -11,35 +11,49 @@ function randomElement(myArray) {
 
 function playRound() {
 
-    for (let i = 0; i < 5; i++) {
+    const wins = ['Start'];
+    const losses = ['Start'];
 
-        let userPlay = pullUser();
-        let computerPlay =pullComputer();
+    for (i = 0; i < 100; i++) {
 
-        if(userPlay == computerPlay) {
-            alert('You and the computer picked the same Type, so it\'s a draw!');
+        if(wins.length == 4) {
+            alert('You win the best-of-five!');
+            throw 'exit';
         }
-        else if(
-            userPlay == 'grass' && computerPlay == 'fire' ||
-            userPlay == 'fire' && computerPlay == 'water' ||
-            userPlay == 'water' && computerPlay == 'grass'
-            ) {
-            alert('The computer picked the Type that beats you, so you lose!')
-        }
-        else if(
-            userPlay == 'grass' && computerPlay == 'water' ||
-            userPlay == 'fire' && computerPlay == 'grass' ||
-            userPlay == 'water' && computerPlay == 'fire'
-        ) {
-            alert('The computer picked the Type weak to you, so you win!')
+        else if(losses.length == 4) {
+            alert('You lose the best-of-five!')
+            throw 'exit';
         }
         else {
-            alert('Remember, Grass beats Water, Fire beats Grass, and Water beats Fire!');
-            break;
-        }
-    }
-    
-};
+            let userPlay = pullUser();
+            let computerPlay =pullComputer();
+
+            if(userPlay == computerPlay) {
+                alert('You and the computer picked the same Type, so it\'s a draw!');
+            }
+            else if(
+                userPlay == 'grass' && computerPlay == 'fire' ||
+                userPlay == 'fire' && computerPlay == 'water' ||
+                userPlay == 'water' && computerPlay == 'grass'
+            ) {
+                alert('The computer picked the Type that beats you, so you lose!');
+                losses.push('L');
+            }
+            else if(
+                userPlay == 'grass' && computerPlay == 'water' ||
+                userPlay == 'fire' && computerPlay == 'grass' ||
+                userPlay == 'water' && computerPlay == 'fire'
+            ) {
+                alert('The computer picked the Type weak to you, so you win!')
+                wins.push('W');
+            }
+            else {
+                alert('Remember, Grass beats Water, Fire beats Grass, and Water beats Fire!');
+                throw 'exit';
+            }
+        }   
+    } 
+}
 
 function pullComputer() {
     return randomElement(computerPlays);
