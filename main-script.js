@@ -49,8 +49,8 @@ function pullComputer() {
 function pullUser() {
     let x = prompt('Pick your Type: Grass, Fire, or Water!');
 
-    if (x === '') {
-        let xcorrect = x.toLowerCase();
+    if (x != null) {
+        let xcorrect = x.trim().toLowerCase();
 
         if(xcorrect == 'grass') {
             return 'grass';
@@ -62,12 +62,12 @@ function pullUser() {
             return 'water';
         }
         else {
-            alert('Remember, Grass beats Water, Fire beats Grass, and Water beats Fire!')
+            return null;
         }
     }
     else {
         alert('Remember, Grass beats Water, Fire beats Grass, and Water beats Fire!');
-        throw "exit";
+        throw 'exit';
     }
 };
 
