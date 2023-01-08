@@ -1,20 +1,24 @@
+//Possible plays for the computer
 const computerPlays = [
     'grass',
     'fire',
     'water'
 ];
 
+//Randomizes the computer's play
 function randomElement(myArray) {
     let index = Math.floor(Math.random() * myArray.length); 
 	return myArray[index];
-}
+};
 
+//Plays a round of the game
 function playRound() {
 
+    //Counts the wins and losses of the player
     const wins = ['Start'];
     const losses = ['Start'];
 
-    for (i = 0; i < 100; i++) {
+    for (i = 1; i = 1; i) {
 
         if(wins.length == 4) {
             alert('You win the best-of-five!');
@@ -24,6 +28,7 @@ function playRound() {
             alert('You lose the best-of-five!')
             throw 'exit';
         }
+        //The actual round of the game that plays if no one has won yet
         else {
             let userPlay = pullUser();
             let computerPlay =pullComputer();
@@ -53,16 +58,18 @@ function playRound() {
             }
         }   
     } 
-}
+};
 
+//Gets the computer's play from a randomizing function + an array
 function pullComputer() {
     return randomElement(computerPlays);
 };
 
 //Converts the user console input into item to be used by playRound
 function pullUser() {
-    let x = prompt('Pick your Type: Grass, Fire, or Water!');
+    let x = prompt('Pick your Type: Grass, Fire, or Water! Win a best-of-five vs. the computer, who will pick a Type, too, a la "Rock Paper Scissors." Let\'s play!');
 
+    //Handles everything but cancels, etc.
     if (x != null) {
         let xcorrect = x.trim().toLowerCase();
 
@@ -75,6 +82,7 @@ function pullUser() {
         else if(xcorrect == 'water') {
             return 'water';
         }
+        //The playRound() function handles the null
         else {
             return null;
         }
