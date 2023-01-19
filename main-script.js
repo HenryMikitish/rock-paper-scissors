@@ -6,7 +6,8 @@ choice = [];
 compchoice = [];
 const yourPlay = document.querySelector('.yourplay');
 const oppPlay = document.querySelector('.oppplay');
-const declaration = document.querySelector('.declare')
+const declaration = document.querySelector('.declare');
+const resetGame = document.querySelector('#reset');
 
 //Possible plays for the computer
 const computerPlays = [
@@ -76,5 +77,36 @@ function compareResults() {
 
     yourScoreBoard.textContent = yourScore;
     oppScoreBoard.textContent = oppScore;
+
+    if (oppScore == 3 || yourScore == 3) {
+
+        document.getElementById('gbtn').disabled = true;
+        document.getElementById('fbtn').disabled = true;
+        document.getElementById('wbtn').disabled = true;
+
+        let endGame = document.createElement('button');
+        endGame.textContent = 'Reset';
+        endGame.setAttribute ('id', 'kill')
+        resetGame.appendChild(endGame);
+    }
+
+reset.addEventListener('click', function() {
+    let redoGame = document.getElementById('kill');
+    redoGame.remove();
+   
+    yourScore = 0;
+    oppScore = 0;
+
+    yourPlay.textContent = 'Go!'
+    oppPlay.textContent = 'Go!'
+    declaration.textContent = 'Who Wins?'
+    yourScoreBoard.textContent = yourScore;
+    oppScoreBoard.textContent = oppScore;
+
+    document.getElementById('gbtn').disabled = false;
+    document.getElementById('fbtn').disabled = false;
+    document.getElementById('wbtn').disabled = false;
+});
+
 
 }
