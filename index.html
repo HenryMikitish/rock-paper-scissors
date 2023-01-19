@@ -3,10 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Grass, Fire, Water</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <div class="intro">
+        Pick your Type: Grass, Fire, or Water! Win a best-of-five vs. the computer, who will pick a Type, too, a la "Rock Paper Scissors." Can you win?
+    </div>
+
+    <!-- <div class="start">
+        <button id="strbtn">Play or Reset</button>
+    </div> -->
+
+    <div class="choices">
+        <button id="gbtn" data-key="grass" class="choice">GRASS</button>
+        <button id="fbtn" data-key="fire" class="choice">FIRE</button>
+        <button id="wbtn" data-key="water" class="choice">WATER</button>
+    </div>
+
+    <div class ="scores">
+        <div class ="yourscore"> 
+            Your score: <span class="score">0</span>
+        </div>
+        <div class ="oppscore"> 
+            Opponent score: <span class="score">0</span>
+        </div>
+    </div>
+
+    <div class="battlefield">
+        <div class="yourplay">
+            <span>Go!</span>
+        </div>
+        <div class="oppplay">
+            <span>Go!</span>
+        </div>
+
+    </div>
+
 </body>
+
+
 <script src="main-script.js"></script>
+
+
 </html>
