@@ -6,6 +6,7 @@ choice = [];
 compchoice = [];
 const yourPlay = document.querySelector('.yourplay');
 const oppPlay = document.querySelector('.oppplay');
+const declaration = document.querySelector('.declare')
 
 //Possible plays for the computer
 const computerPlays = [
@@ -52,13 +53,27 @@ function compareResults() {
     if (compchoice[0] == 'fire') {oppPlay.textContent = 'Go, Fire!'};
     if (compchoice[0] == 'water') {oppPlay.textContent = 'Go, Water!'};
 
-    if (choice[0] == 'grass') {yourScore++};
-    if (choice[0] == 'fire') {yourScore++};
-    if (compchoice[0] == 'grass') {oppScore++};
-    if (compchoice[0] == 'fire') {oppScore++};
-    if (compchoice[0] == 'water') {oppScore++};
+    if (
+        choice[0] == 'grass' && compchoice[0] == 'water' ||
+        choice[0] == 'fire' && compchoice[0] == 'grass' ||
+        choice[0] == 'water' && compchoice[0] == 'fire'
+    ) {
+        declaration.textContent = 'YOU WIN';
+        yourScore++}
+
+    else if (
+        compchoice[0] == 'grass' && choice[0] == 'water' ||
+        compchoice[0] == 'fire' && choice[0] == 'grass' ||
+        compchoice[0] == 'water' && choice[0] == 'fire'
+    ) {
+        declaration.textContent = 'YOU LOSE';
+        oppScore++}
+    
+    else {declaration.textContent = 'IT\'S A TIE'};
+
     choice.splice(0, choice.length);
     compchoice.splice(0, compchoice.length);
+
     yourScoreBoard.textContent = yourScore;
     oppScoreBoard.textContent = oppScore;
 

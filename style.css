@@ -58,9 +58,16 @@
     display: flex;
     justify-content: space-evenly;
     font-size: 50px;
+    margin: 0 0 50px 0;
 }
 
 .battlefield .yourplay {
     color:rgb(70, 199, 242);
+}
+
+.declare {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
 }
 
