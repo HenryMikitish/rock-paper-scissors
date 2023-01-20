@@ -95,7 +95,34 @@ function compareResults() {
         declaration.textContent = 'YOU LOSE';
         oppScore++}
     
-    else {declaration.textContent = 'IT\'S A TIE'};
+    else {
+        declaration.textContent = 'IT\'S A TIE';
+    };
+
+    if ((choice[0] == 'grass' && compchoice[0] == 'grass') ||
+        (choice[0] == 'fire' && compchoice[0] == 'fire') ||
+        (choice[0] == 'water' && compchoice[0] == 'water')) {
+            declaration.classList.remove('tie', 'waterwin', 'firewin', 'grasswin');
+            declaration.classList.add('tie'); 
+        }
+
+    if ((choice[0] == 'grass' || compchoice[0] == 'grass') &&
+        (choice[0] == 'water' || compchoice[0] == 'water')) {
+            declaration.classList.remove('tie', 'waterwin', 'firewin', 'grasswin');
+            declaration.classList.add('grasswin'); 
+    }
+    
+    if ((choice[0] == 'grass' || compchoice[0] == 'grass') &&
+        (choice[0] == 'fire' || compchoice[0] == 'fire')) {
+            declaration.classList.remove('tie', 'waterwin', 'firewin', 'grasswin');
+            declaration.classList.add('firewin'); 
+    }
+
+    if ((choice[0] == 'water' || compchoice[0] == 'water') &&
+        (choice[0] == 'fire' || compchoice[0] == 'fire')) {
+            declaration.classList.remove('tie', 'waterwin', 'firewin', 'grasswin');
+            declaration.classList.add('waterwin'); 
+    }
 
     choice.splice(0, choice.length);
     compchoice.splice(0, compchoice.length);
@@ -125,13 +152,15 @@ reset.addEventListener('click', function() {
     yourScore = 0;
     oppScore = 0;
 
-    yourPlay.textContent = 'Go!';
+    yourPlay.textContent = '';
     yourPlay.style.color = 'black';
-    oppPlay.textContent = 'Go!';
+    oppPlay.textContent = '';
     oppPlay.style.color = 'black';
-    declaration.textContent = 'WHO WINS?';
+    declaration.textContent = '';
     yourScoreBoard.textContent = yourScore;
     oppScoreBoard.textContent = oppScore;
+
+    declaration.classList.remove('tie', 'waterwin', 'firewin', 'grasswin'); 
 
     document.getElementById('gbtn').disabled = false;
     document.getElementById('fbtn').disabled = false;
