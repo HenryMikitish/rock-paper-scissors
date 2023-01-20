@@ -7,6 +7,7 @@ compchoice = [];
 const yourPlay = document.querySelector('.yourplay');
 const oppPlay = document.querySelector('.oppplay');
 const declaration = document.querySelector('.declare');
+const declarationWindow = document.querySelector('.declarecontainer')
 const resetGame = document.querySelector('#reset');
 
 //Possible plays for the computer
@@ -102,26 +103,26 @@ function compareResults() {
     if ((choice[0] == 'grass' && compchoice[0] == 'grass') ||
         (choice[0] == 'fire' && compchoice[0] == 'fire') ||
         (choice[0] == 'water' && compchoice[0] == 'water')) {
-            declaration.classList.remove('tie', 'waterwin', 'firewin', 'grasswin');
-            declaration.classList.add('tie'); 
+            declarationWindow.classList.remove('tie', 'waterwin', 'firewin', 'grasswin');
+            declarationWindow.classList.add('tie'); 
         }
 
     if ((choice[0] == 'grass' || compchoice[0] == 'grass') &&
         (choice[0] == 'water' || compchoice[0] == 'water')) {
-            declaration.classList.remove('tie', 'waterwin', 'firewin', 'grasswin');
-            declaration.classList.add('grasswin'); 
+            declarationWindow.classList.remove('tie', 'waterwin', 'firewin', 'grasswin');
+            declarationWindow.classList.add('grasswin'); 
     }
     
     if ((choice[0] == 'grass' || compchoice[0] == 'grass') &&
         (choice[0] == 'fire' || compchoice[0] == 'fire')) {
-            declaration.classList.remove('tie', 'waterwin', 'firewin', 'grasswin');
-            declaration.classList.add('firewin'); 
+            declarationWindow.classList.remove('tie', 'waterwin', 'firewin', 'grasswin');
+            declarationWindow.classList.add('firewin'); 
     }
 
     if ((choice[0] == 'water' || compchoice[0] == 'water') &&
         (choice[0] == 'fire' || compchoice[0] == 'fire')) {
-            declaration.classList.remove('tie', 'waterwin', 'firewin', 'grasswin');
-            declaration.classList.add('waterwin'); 
+            declarationWindow.classList.remove('tie', 'waterwin', 'firewin', 'grasswin');
+            declarationWindow.classList.add('waterwin'); 
     }
 
     choice.splice(0, choice.length);
@@ -156,11 +157,11 @@ reset.addEventListener('click', function() {
     yourPlay.style.color = 'black';
     oppPlay.textContent = '';
     oppPlay.style.color = 'black';
-    declaration.textContent = '';
+    declaration.textContent = 'WHO WILL WIN?';
     yourScoreBoard.textContent = yourScore;
     oppScoreBoard.textContent = oppScore;
 
-    declaration.classList.remove('tie', 'waterwin', 'firewin', 'grasswin'); 
+    declarationWindow.classList.remove('tie', 'waterwin', 'firewin', 'grasswin'); 
 
     document.getElementById('gbtn').disabled = false;
     document.getElementById('fbtn').disabled = false;

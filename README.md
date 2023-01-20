@@ -16,5 +16,5 @@ https://pixabay.com/photos/fire-wood-fire-flame-burn-brand-171229/
 water win image by MartinStr on pixabay:
 https://pixabay.com/photos/bubbles-water-bubbly-bubbling-230014/
 
-tie image by ArtTower on pixabay:
-https://pixabay.com/photos/abstract-smoke-background-swirl-69124/ 
+tie image by Engin_Akyurt on pixabay:
+https://pixabay.com/photos/cloudy-rain-white-clouds-nature-2680190/
