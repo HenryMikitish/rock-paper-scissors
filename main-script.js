@@ -53,12 +53,31 @@ wbtn.addEventListener('click', function(e) {
 });
 
 function compareResults() {
-    if (choice[0] == 'grass') {yourPlay.textContent = 'Go, Grass!'};
-    if (choice[0] == 'fire') {yourPlay.textContent = 'Go, Fire!'};
-    if (choice[0] == 'water') {yourPlay.textContent = 'Go, Water!'};
-    if (compchoice[0] == 'grass') {oppPlay.textContent = 'Go, Grass!'};
-    if (compchoice[0] == 'fire') {oppPlay.textContent = 'Go, Fire!'};
-    if (compchoice[0] == 'water') {oppPlay.textContent = 'Go, Water!'};
+    if (choice[0] == 'grass') {
+        yourPlay.textContent = 'Go, Grass!';
+        yourPlay.style.color = 'rgb(75, 177, 75)';
+    };
+    if (choice[0] == 'fire') {
+        yourPlay.textContent = 'Go, Fire!';
+        yourPlay.style.color = 'rgb(248, 98, 39)';
+    };
+    if (choice[0] == 'water') {
+        yourPlay.textContent = 'Go, Water!';
+        yourPlay.style.color = 'rgb(70, 199, 242)';
+    };
+
+    if (compchoice[0] == 'grass') {
+        oppPlay.textContent = 'Go, Grass!';
+        oppPlay.style.color = 'rgb(75, 177, 75)';
+    }
+    if (compchoice[0] == 'fire') {
+        oppPlay.textContent = 'Go, Fire!';
+        oppPlay.style.color = 'rgb(248, 98, 39)';
+    }
+    if (compchoice[0] == 'water') {
+        oppPlay.textContent = 'Go, Water!';
+        oppPlay.style.color = 'rgb(70, 199, 242)';
+    }
 
     if (
         choice[0] == 'grass' && compchoice[0] == 'water' ||
@@ -86,6 +105,9 @@ function compareResults() {
 
     if (oppScore == 3 || yourScore == 3) {
 
+        if (oppScore == 3) {declaration.textContent = 'YOU LOSE THE GAME'};
+        if (yourScore == 3) {declaration.textContent = 'YOU WIN THE GAME'};
+
         document.getElementById('gbtn').disabled = true;
         document.getElementById('fbtn').disabled = true;
         document.getElementById('wbtn').disabled = true;
@@ -103,9 +125,11 @@ reset.addEventListener('click', function() {
     yourScore = 0;
     oppScore = 0;
 
-    yourPlay.textContent = 'Go!'
-    oppPlay.textContent = 'Go!'
-    declaration.textContent = 'Who Wins?'
+    yourPlay.textContent = 'Go!';
+    yourPlay.style.color = 'black';
+    oppPlay.textContent = 'Go!';
+    oppPlay.style.color = 'black';
+    declaration.textContent = 'WHO WINS?';
     yourScoreBoard.textContent = yourScore;
     oppScoreBoard.textContent = oppScore;
 
