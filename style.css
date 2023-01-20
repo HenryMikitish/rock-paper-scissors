@@ -29,6 +29,27 @@
     font-family:'Courier New', Courier, monospace;
 }
 
+.gograss {
+    transition: all .1s ease;
+    transform: scale(1.1);
+    border-color: rgb(184, 255, 184);
+    box-shadow: 0 0 1rem rgb(94, 255, 94);
+}
+
+.gofire {
+    transition: all .1s ease;
+    transform: scale(1.1);
+    border-color: rgb(255, 173, 140);
+    box-shadow: 0 0 1rem rgb(255, 87, 21);
+}
+
+.gowater {
+    transition: all .1s ease;
+    transform: scale(1.1);
+    border-color: rgb(157, 231, 255);;
+    box-shadow: 0 0 1rem rgb(48, 203, 255);;
+}
+
 .choices #fbtn {
     background-color: rgb(248, 98, 39);
     font-family:'Courier New', Courier, monospace;
@@ -75,4 +96,8 @@
 #reset {
     display: flex;
     justify-content: center;
+}
+
+#reset button {
+    font-family:'Courier New', Courier, monospace;
 }

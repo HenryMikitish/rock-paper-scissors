@@ -1,5 +1,5 @@
-const yourScoreBoard = document.querySelector('.yourscore');
-const oppScoreBoard = document.querySelector('.oppscore');
+const yourScoreBoard = document.querySelector('#yourscore');
+const oppScoreBoard = document.querySelector('#oppscore');
 let yourScore = 0;
 let oppScore = 0;
 choice = [];
@@ -27,23 +27,29 @@ function pullComputer() {
     compchoice.push(randomElement(computerPlays));
 };
 
-gbtn.addEventListener('click', function() {
+gbtn.addEventListener('click', function(e) {
+    e.target.classList.add('gograss');
     choice.push('grass');
     pullComputer();
     compareResults();
+    setTimeout(() => {e.target.classList.remove('gograss')}, 100);
 });
 
 
-fbtn.addEventListener('click', function() {
+fbtn.addEventListener('click', function(e) {
+    e.target.classList.add('gofire');
     choice.push('fire');
     pullComputer();
     compareResults();
+    setTimeout(() => {e.target.classList.remove('gofire')}, 100);
 });
 
-wbtn.addEventListener('click', function() {
+wbtn.addEventListener('click', function(e) {
+    e.target.classList.add('gowater');
     choice.push('water');
     pullComputer();
     compareResults();
+    setTimeout(() => {e.target.classList.remove('gowater')}, 100);
 });
 
 function compareResults() {
