@@ -1,8 +1,10 @@
 body {
+    padding: 10px 10px 0px 10px;
     margin: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .intro {
@@ -10,6 +12,7 @@ body {
     justify-content: center;
     font-family:'Courier New', Courier, monospace;
     margin: 0 0 50px 0;
+    text-align: justify;
 }
 
 .start {
@@ -25,14 +28,17 @@ body {
 .choices {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 100px;
     margin: 0 0 50px 0;
-
 }
 
 .choices #gbtn {
     background-color: rgb(75, 177, 75);
     font-family:'Courier New', Courier, monospace;
+    height: 50px;
+    width: 100px;
+    border-radius: 2px;
+    font-size: 20px;
 }
 
 .gograss {
@@ -45,6 +51,10 @@ body {
 .choices #fbtn {
     background-color: rgb(248, 98, 39);
     font-family:'Courier New', Courier, monospace;
+    height: 50px;
+    width: 100px;
+    border-radius: 2px;
+    font-size: 20px;
 }
 
 .gofire {
@@ -57,6 +67,10 @@ body {
 .choices #wbtn {
     background-color: rgb(70, 199, 242);
     font-family:'Courier New', Courier, monospace;
+    height: 50px;
+    width: 100px;
+    border-radius: 2px;
+    font-size: 20px;
 }
 
 .gowater {
@@ -69,22 +83,29 @@ body {
 .scores {
     display: flex;
     justify-content: space-between;
-    padding: 0 20px 0 20px;
+    align-items: center;
     margin: 0 0 50px 0;
 }
 
 .yourscore {
     font-family:'Courier New', Courier, monospace;
+    padding: 0 0 0 20px;
+    min-width: 200px;
 }
 
 .oppscore {
     font-family:'Courier New', Courier, monospace;
+    padding: 0 20px 0 0px;
+    min-width: 200px;
+    text-align: right;
 }
 
 .battlefield {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     font-size: 50px;
+    gap: 40px;
     margin: 0 0 50px 0;
 }
 
@@ -102,7 +123,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 50px;
-    margin: 0 0 0 0;
+    margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: rgb(212, 210, 199);
 }
@@ -112,6 +133,7 @@ body {
     height: 50px;
     justify-content: center;
     align-items: center;
+    padding: 0 0 10px 0;
 }
 
 #reset button {
