@@ -135,6 +135,7 @@ body {
 }
 
 .declare {
+    text-align: center;
     background-color: white;
     border-style: solid;
     border-width: 2px;
